@@ -33,6 +33,9 @@ function CallbackFunc(Error, Results){
     Results.forEach(data => console.log(data));
 }
 
-let sql = ``
-
-db.exec(sql, CallbackFunc);
+let sql = `
+DELETE FROM Users
+WHERE Username = "timmy"
+`
+db.all(sql,CallbackFunc);
+//db.exec(sql, CallbackFunc);
